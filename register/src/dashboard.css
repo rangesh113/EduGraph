@@ -1,0 +1,180 @@
+#dashnav {
+  width: 100%;
+  padding: 8px 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed; 
+  z-index: 999;
+  top: 0; 
+  left: 0;
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: background-color 0.3s ease;
+}
+
+#dashnav a {
+  color: #fff;
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 20px;
+  transition: all 0.3s ease;
+}
+
+#username {
+  font-size: 10px;
+  font-weight: bold;
+  color: #f8fafc;
+  margin-left: auto;
+  background: linear-gradient(90deg, #2563eb, #1d4ed8);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+#dashnav a:hover {
+  color: white;
+  background-color: #1d4ed8;
+  border-radius: 20px;
+  padding: 10px;
+  transform: scale(1.1);
+}
+
+#app {
+  background: linear-gradient(rgba(3, 3, 7, 0.7), rgba(8, 0, 58, 0.7)), url("./background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+#stuhead {
+  margin-top: 20px;
+  text-align: center;
+  max-width: 800px;
+}
+
+#stuhead h1, p {
+  color: #fff;
+  font-size: 30px;
+}
+
+#stufooter {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%; 
+  text-align: center;
+  color: #fff;
+  padding: 10px 0;
+  background: rgba(0, 0, 0, 0.7); 
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 20px;  /* Adjust this to position it next to the logo */
+  z-index: 1000;
+  transition: color 0.3s ease;
+}
+
+.hamburger:hover {
+  color: #1d4ed8;
+}
+
+.dashmenu {
+  display: flex;
+  align-items: center;
+}
+
+.dashmenu a,
+.dashmenu #username {
+  margin-left: 20px;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: background 0.3s ease, padding 0.3s ease, transform 0.3s ease;
+}
+
+.dashmenu a:hover {
+  background-color: #1d4ed8;
+  border-radius: 5px;
+  padding: 12px 25px;
+  transform: scale(1.05);
+}
+
+/* Mobile view - max-width: 768px */
+@media (max-width: 768px) {
+  #dashnav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+
+  /* Initially hide the menu off-screen */
+  .dashmenu {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: fixed;
+      top: 0;
+      left: -100%;  /* Position it off-screen */
+      background-color: rgba(0, 0, 0, 0.95);
+      width: 100%;
+      height: 100vh;  /* Full screen height */
+      padding: 20px;
+      transition: left 0.3s ease-in-out, transform 0.3s ease;
+      z-index: 1000;
+  }
+
+  /* Show the menu when toggled */
+  .dashmenu.show {
+      left: 0;  /* Slide it into view */
+      transform: translateX(0);
+  }
+
+  /* Show the hamburger icon */
+  .hamburger {
+      display: block;
+      font-size: 2rem;
+      color: #ffffff;
+      cursor: pointer;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 1001;
+  }
+
+  /* Adjust spacing for logo */
+  #dashnav img {
+      margin-left: 70px;
+      margin-top: 10px;
+  }
+
+  #username {
+      margin-top: 30px;
+  }
+
+  /* Menu links */
+  .dashmenu a {
+      margin-top: 40px;
+      margin-left: 0px; /* Space out the menu items */
+      padding: 15px 20px;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+  }
+
+  .dashmenu a:hover {
+      background-color: #1d4ed8;
+      border-radius: 5px;
+      padding: 15px 25px;
+      transform: scale(1.05);
+  }
+}

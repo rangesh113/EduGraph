@@ -1,0 +1,251 @@
+#marknav {
+  width: 100%;
+  padding: 8px 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed; 
+  z-index: 999;
+  top: 0; 
+  left: 0;
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: background-color 0.3s ease;
+}
+
+
+#marknav img {
+  width: 150px;
+}
+
+#marknav a {
+  color: #fff;
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 20px;
+  transition: all 0.3s ease;
+}
+
+#username {
+  font-size: 10px;
+  font-weight: bold;
+  color: #f8fafc;
+  margin-left: auto;
+  background: linear-gradient(90deg, #2563eb, #1d4ed8);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+#marknav a:hover {
+  color: white;
+  background-color: #1d4ed8;
+  border-radius: 20px;
+  padding: 10px;
+  transform: scale(1.1);
+}
+
+#appMark {
+  background: linear-gradient(rgba(3, 3, 7, 0.7), rgba(8, 0, 58, 0.7));
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: scroll;
+}
+
+#head {
+  margin-top: 5rem;
+}
+
+.chart-container {
+  width: 80%;
+  max-width: 900px;
+  height: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 20px;  /* Adjust this to position it next to the logo */
+  z-index: 1000;
+  transition: color 0.3s ease;
+}
+
+.hamburger:hover {
+  color: #1d4ed8;
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu a,
+.menu #username {
+  margin-left: 20px;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: background 0.3s ease, padding 0.3s ease, transform 0.3s ease;
+}
+
+.menu a:hover {
+  background-color: #1d4ed8;
+  border-radius: 5px;
+  padding: 12px 25px;
+  transform: scale(1.05);
+}
+
+/* Mobile view - max-width: 768px */
+@media (max-width: 768px) {
+  #marknav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+
+  /* Initially hide the menu off-screen */
+  .menu {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: fixed;
+      top: 0;
+      left: -100%;  /* Position it off-screen */
+      background-color: rgba(0, 0, 0, 0.95);
+      width: 100%;
+      height: 100vh;  /* Full screen height */
+      padding: 20px;
+      transition: left 0.3s ease-in-out, transform 0.3s ease;  /* Smooth transition */
+      z-index: 1000;
+  }
+
+  /* Show the menu when toggled */
+  .menu.show {
+      left: 0;  /* Slide it into view */
+      transform: translateX(0);
+  }
+
+  /* Show the hamburger icon */
+  .hamburger {
+      display: block;
+      font-size: 2rem;
+      color: #ffffff;
+      cursor: pointer;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 1001;
+  }
+
+  /* Adjust spacing for logo */
+  #marknav img {
+      margin-left: 70px;
+      margin-top: 10px;
+  }
+
+  #username {
+      margin-top: 30px;
+  }
+
+  /* Menu links */
+  .menu a {
+      margin-top: 30px;
+      margin-left: 0px; /* Space out the menu items */
+      padding: 15px 20px;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+  }
+
+  .menu a:hover {
+      background-color: #1d4ed8;
+      border-radius: 5px;
+      padding: 15px 25px;
+      transform: scale(1.05);
+  }
+}
+/* Ensure container covers full width and height */
+#appMark {
+  background-color: #1a1a2e; /* Dark background for better contrast */
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#head {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.chart-container {
+  width: 90%; /* Make the graph occupy most of the container width */
+  max-width: 1200px; /* Limit the max width */
+  background-color: #222831; /* Slightly lighter background for the chart section */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+select {
+  margin: 10px 0;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+}
+
+nav {
+  background-color: #0f3460; /* Darker navigation bar */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+nav img {
+  height: 50px;
+}
+
+nav .hamburger {
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+nav .dashmenu {
+  display: flex;
+  gap: 20px;
+}
+
+nav .dashmenu a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+#chart {
+  margin-top: 20px;
+}
